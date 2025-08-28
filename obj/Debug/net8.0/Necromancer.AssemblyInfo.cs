@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Necromancer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc5de5fffe5f698dd6dfde8cccb8484fe78d96f8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Necromancer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Necromancer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
