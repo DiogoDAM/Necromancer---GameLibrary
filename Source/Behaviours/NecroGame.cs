@@ -22,6 +22,10 @@ public class NecroGame : Game
 	public static Time Time;
 
 	public SceneManager SceneManager;
+	public Scene CurrentScene => SceneManager.CurrentScene;
+	public Scene LastScene => SceneManager.LastScene;
+
+	public static Input Input;
 
 	public static bool IsDebugMode;
 
@@ -36,6 +40,12 @@ public class NecroGame : Game
 
 		GameTitle = windowTitle;
 		Window.Title = GameTitle;
+
+		SceneManager = new();
+
+		Input = new();
+
+		Drawer.Initialize(GraphicsDevice);
 
 		SetWindowSize(ww, wh);
 		SetWindowFullscreen(isfullscreen);
