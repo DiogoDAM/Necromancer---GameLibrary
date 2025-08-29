@@ -35,21 +35,21 @@ public class Input
 
 	public void AddKeyboardAction(string actionName, Keys key)
 	{
-		if(!_actions.ContainsKey(actionName)) throw new KeyNotFoundException();
+		if(!_actions.ContainsKey(actionName)) throw new KeyNotFoundException($"The action: {actionName} not implemented");
 
 		_actions[actionName].Add(InputAction.CreateKeyboardAction(key));
 	}
 
 	public void AddMouseAction(string actionName, byte button)
 	{
-		if(!_actions.ContainsKey(actionName)) throw new KeyNotFoundException();
+		if(!_actions.ContainsKey(actionName)) throw new KeyNotFoundException($"The action: {actionName} not implemented");
 
 		_actions[actionName].Add(InputAction.CreateMouseAction(button));
 	}
 
 	public List<InputAction> GetAction(string actionName)
 	{
-		if(!_actions.ContainsKey(actionName)) throw new KeyNotFoundException();
+		if(!_actions.ContainsKey(actionName)) throw new KeyNotFoundException($"The action: {actionName} not implemented");
 
 		return _actions[actionName];
 	}
@@ -62,15 +62,14 @@ public class Input
 		doc.Load(fullpath);
 
 		var actionsNodes = doc.SelectSingleNode("Actions");
-		var actions = doc.SelectNodes("Action");
-		foreach(XmlNode action in actions)
+		foreach(XmlNode action in actionsNodes)
 		{
 			string name = action.Attributes["name"].Value;
 			AddAction(name);
 
 			foreach(XmlNode keynode in action.SelectNodes("Key"))
 			{
-				if(Enum.TryParse(keynode.Value, out Keys key))
+				if(Enum.TryParse(keynode.InnerText, out Keys key))
 				{
 					AddKeyboardAction(name, key);
 				}

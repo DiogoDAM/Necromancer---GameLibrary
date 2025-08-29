@@ -45,7 +45,6 @@ public class NecroGame : Game
 
 		Input = new();
 
-		Drawer.Initialize(GraphicsDevice);
 
 		SetWindowSize(ww, wh);
 		SetWindowFullscreen(isfullscreen);
@@ -60,6 +59,7 @@ public class NecroGame : Game
 	protected override void Initialize()
 	{
 		GraphicsDevice = base.GraphicsDevice;
+		Drawer.Initialize(GraphicsDevice);
 
 		SpriteBatch = new SpriteBatch(GraphicsDevice);
 
@@ -69,6 +69,7 @@ public class NecroGame : Game
 	protected override void Update(GameTime gameTime)
 	{
 		Time.DeltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+		Input.Update();
 
 		if(IsDebugMode)
 		{

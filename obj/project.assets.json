@@ -273,11 +273,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/diogodam/Jogos/Necromancer/Necromancer.csproj",
+      "projectUniqueName": "/home/diogodam/Jogos/Necromancer-GameLibrary/Necromancer.csproj",
       "projectName": "Necromancer",
-      "projectPath": "/home/diogodam/Jogos/Necromancer/Necromancer.csproj",
+      "projectPath": "/home/diogodam/Jogos/Necromancer-GameLibrary/Necromancer.csproj",
       "packagesPath": "/home/diogodam/.nuget/packages/",
-      "outputPath": "/home/diogodam/Jogos/Necromancer/obj/",
+      "outputPath": "/home/diogodam/Jogos/Necromancer-GameLibrary/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/diogodam/.nuget/NuGet/NuGet.Config"

@@ -6,7 +6,7 @@ namespace Necromancer;
 
 public class TiledOrthogonalRenderer : ITiledRenderer 
 {
-	public void DrawMap(TiledMap map)
+	public void DrawMap(TiledMap map, Matrix transformMatrix, Rectangle drawBounds)
 	{
 		if(map.Orientation != "orthogonal") throw new Exception("TiledOrthogonalRenderer need to be a orthogonal orientation");
 
@@ -14,11 +14,11 @@ public class TiledOrthogonalRenderer : ITiledRenderer
 		{
 			if(layer.Visible == false) continue;
 
-			DrawLayer(map, layer);
+			DrawLayer(map, layer, transformMatrix, drawBounds);
 		}
 	}
 
-	public void DrawLayer(TiledMap map, TiledLayer layer)
+	public void DrawLayer(TiledMap map, TiledLayer layer, Matrix transformMatrix, Rectangle drawBounds)
 	{
 		//Load Tileset
 		TiledTileset tileset = map.Tilesets[layer.Id-1];
@@ -27,8 +27,9 @@ public class TiledOrthogonalRenderer : ITiledRenderer
 		TextureAtlas atlas = tileset.Atlas;
 		Texture2D texture = atlas.Texture;
 
+
 		//Draw Tiles
-		NecroGame.SpriteBatch.Begin(transformMatrix: map.Matrix);
+		NecroGame.SpriteBatch.Begin(transformMatrix: transformMatrix);
 
 		for(int y=0; y<layer.Height; y++)
 		{
@@ -40,7 +41,11 @@ public class TiledOrthogonalRenderer : ITiledRenderer
 				Vector2 pos = new Vector2((map.TileWidth * x), (map.TileHeight * y));
 				Color color = Color.White * layer.Opacity;
 
-				NecroGame.SpriteBatch.Draw(texture, pos, atlas[index-1], color);
+				Rectangle tile = atlas[index-1];
+				tile.X = (int)pos.X;
+				tile.Y = (int)pos.Y;
+
+				if(drawBounds.Intersects(tile)) NecroGame.SpriteBatch.Draw(texture, pos, atlas[index-1], color);
 			}
 		}
 

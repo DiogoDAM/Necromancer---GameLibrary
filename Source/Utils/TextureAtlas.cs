@@ -38,6 +38,7 @@ public class TextureAtlas
 
 	public TextureAtlas(Texture2D texture, int tileWidth, int tileHeight)
 	{
+		_regions = new();
 		Texture = texture;
 
 		int cols = texture.Width / tileWidth;
@@ -47,7 +48,8 @@ public class TextureAtlas
 		{
 			for(int col=0; col<cols; col++)
 			{
-				_regions.Add(col + row * cols, new Rectangle(col * tileWidth, row * tileHeight, tileWidth, tileHeight));
+				int index = col + row * cols;
+				_regions.Add(index, new Rectangle(col * tileWidth, row * tileHeight, tileWidth, tileHeight));
 			}
 		}
 	}

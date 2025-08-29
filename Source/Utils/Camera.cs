@@ -8,7 +8,7 @@ public class Camera
 	public Transform Transform { get; private set; }
 	public Viewport Viewport;
 
-	public Rectangle BoundingRectangle => new Rectangle((int)Transform.Position.X, (int)Transform.Position.Y, Viewport.Width, Viewport.Height);
+	public Rectangle BoundingRectangle => new Rectangle((int)Transform.Position.X, (int)Transform.Position.Y, (int)(Viewport.Width * Transform.Scale.X), (int)(Viewport.Height * Transform.Scale.Y));
 
 	public Camera(int width, int height)
 	{

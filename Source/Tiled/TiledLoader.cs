@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using System.Xml;
 
@@ -23,14 +22,7 @@ public static class TiledLoader
 		map.Height = int.Parse(mapNode.Attributes["height"].Value);
 		map.TileWidth = int.Parse(mapNode.Attributes["tilewidth"].Value);
 		map.TileHeight = int.Parse(mapNode.Attributes["tileheight"].Value);
-
-		//Get orientation and set the renderer
 		map.Orientation = mapNode.Attributes["orientation"].Value;
-		switch(map.Orientation)
-		{
-			case "orthogonal": map.Renderer = new TiledOrthogonalRenderer(); break;
-			default: throw new Exception($"TiledMap Orientation not supported: {map.Orientation}");
-		}
 
 		XmlNodeList tilesetsNode = mapNode.SelectNodes("tileset");
 		foreach(XmlNode tileset in tilesetsNode)

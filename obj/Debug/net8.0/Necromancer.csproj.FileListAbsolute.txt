@@ -1,0 +1,13 @@
+/home/diogodam/Jogos/Necromancer-GameLibrary/bin/Debug/net8.0/Necromancer.deps.json
+/home/diogodam/Jogos/Necromancer-GameLibrary/bin/Debug/net8.0/Necromancer.dll
+/home/diogodam/Jogos/Necromancer-GameLibrary/bin/Debug/net8.0/Necromancer.pdb
+/home/diogodam/Jogos/Necromancer-GameLibrary/obj/Debug/net8.0/Necromancer.csproj.AssemblyReference.cache
+/home/diogodam/Jogos/Necromancer-GameLibrary/obj/Debug/net8.0/Necromancer.GeneratedMSBuildEditorConfig.editorconfig
+/home/diogodam/Jogos/Necromancer-GameLibrary/obj/Debug/net8.0/Necromancer.AssemblyInfoInputs.cache
+/home/diogodam/Jogos/Necromancer-GameLibrary/obj/Debug/net8.0/Necromancer.AssemblyInfo.cs
+/home/diogodam/Jogos/Necromancer-GameLibrary/obj/Debug/net8.0/Necromancer.csproj.CoreCompileInputs.cache
+/home/diogodam/Jogos/Necromancer-GameLibrary/obj/Debug/net8.0/Necromancer.sourcelink.json
+/home/diogodam/Jogos/Necromancer-GameLibrary/obj/Debug/net8.0/Necromancer.dll
+/home/diogodam/Jogos/Necromancer-GameLibrary/obj/Debug/net8.0/refint/Necromancer.dll
+/home/diogodam/Jogos/Necromancer-GameLibrary/obj/Debug/net8.0/Necromancer.pdb
+/home/diogodam/Jogos/Necromancer-GameLibrary/obj/Debug/net8.0/ref/Necromancer.dll

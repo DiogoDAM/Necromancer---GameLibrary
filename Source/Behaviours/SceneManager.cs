@@ -18,9 +18,20 @@ public sealed class SceneManager
 
 	}
 
-	public void Start() => CurrentScene.Start();
+	public void Start() 
+	{
+		if(_nextScene.Item1 != null) ProcessChangeScene();
 
-	public void BeforeUpdate(Time time) => CurrentScene?.BeforeUpdate(time);
+		CurrentScene.Start();
+	}
+
+	public void BeforeUpdate(Time time) 
+	{
+		if(_nextScene.Item1 != null) ProcessChangeScene();
+
+		CurrentScene?.BeforeUpdate(time);
+	}
+
 	public void Update(Time time) => CurrentScene?.Update(time);
 	public void AfterUpdate(Time time) => CurrentScene?.AfterUpdate(time);
 

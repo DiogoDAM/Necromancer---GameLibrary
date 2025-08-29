@@ -14,20 +14,10 @@ public class TiledMap
 	public List<TiledLayer> Layers { get; set; }
 	public List<TiledObjectGroup> ObjectGroups { get; set; }
 
-	public ITiledRenderer Renderer;
-	public Matrix Matrix;
-
 	public TiledMap()
 	{
 		Tilesets = new List<TiledTileset>();
 		Layers = new List<TiledLayer>();
 		ObjectGroups = new List<TiledObjectGroup>();
-	}
-
-	public void Update(Matrix matrix) => Matrix = matrix;
-
-	public void Draw()
-	{
-		Renderer.DrawMap(this);
 	}
 }
